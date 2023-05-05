@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio forca</title>
+</head>
+<body>
+    <script>
+
+        let palavra = prompt("Digite uma palavra secreta").toUpperCase();
+        let letrachutada = "".toUpperCase();
+        let tamanhopalavra = palavra.length;
+        let letrasAcertadas = "";
+        let letrasjachutadas = "";
+        let letrasErradas = "";
+        let tentativas = 0;
+        let maxtentativas = 6;
+        
+
+
+        for(let i = 0; i < tamanhopalavra; i++) {
+           letrasAcertadas += "_";
+            
+        }
+        
+        while(tentativas < maxtentativas) {
+            letrachutada = prompt(`palavra: ${letrasAcertadas} \nTentativas: ${tentativas}\nLetras já chutadas: ${letrasjachutadas}\nLetras erradas: ${letrasErradas}\nDigite uma letra: `)
+        
+            if(letrasjachutadas.includes(letrachutada) || letrasAcertadas.includes(letrachutada) || letrasErradas.includes(letrachutada)) {
+                alert("Você já chutou essa letra tente outra");
+                continue;
+            }
+
+            if(palavra.includes(letrachutada)) {
+
+                for(let i = 0; i < tamanhopalavra; i++) {
+
+                    if(palavra[i] === letrachutada) {
+
+                        letrasAcertadas = letrasAcertadas.substr(0,1) + letrachutada + letrasAcertadas.substr(i + 1);
+                    }
+                }
+                if (letrasAcertadas === palavra) {
+                alert(`Parbéns! você acertou a palavra secreta "${palavra}" com ${tentativas + 1} tentativas.`);
+                break;
+                }   else {letrasErradas += tentativas++;}
+                if(tentativas.length === maxtentativas) {
+                alert(`Game over! A palavra secreta era "${palavra}.`)
+                break;
+                }
+                tentativas++;
+            }
+        
+            letrasjachutadas += letrachutada + " ";
+        
+        }
+        
+            
+        
+    </script>
+    
+</body>
+</html>

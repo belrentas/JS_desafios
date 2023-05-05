@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estoque</title>
+</head>
+<body>
+    
+<script>
+
+       
+    let listaestoque = []
+
+    while(true) {// true faz com que o loop fique infinito
+
+        let opcao = prompt(`Estoque, escolha uma opção: \n \n 1- Para adicionar um produto\n 2- Para remover um produto\n 3- Para exibir a lista\n 4- Sair`)
+
+        if(opcao === "1"){
+
+            let novoitem = prompt("Digite o item que deseja adicionar");
+            listaestoque.push(novoitem);
+            alert(`O item "${novoitem}" foi adicionado ao estoque`);
+            continue;
+
+        }else if(opcao === "2") {//opçao para remover item do estoque
+
+            let  itemexcluido = prompt("Digite o item que deseja removido");
+            let index = listaestoque.indexOf(itemexcluido);//para apagar e nao substituir
+            
+            if(index !== -1) {//verifica se o item existe no estoque pq se o index of nao acha o item ele retorna -1
+                listaestoque.splice(index, 1);// o um precisa estar  
+                alert(`O item "${itemexcluido}" foi removido ao estoque`);
+                
+            } else {
+                alert(`o item "${itemexcluido}" não existe no estoque`)
+                
+            }
+
+       }
+        if(opcao === "3") {// apenas exibe a lista do estoque em um alert
+            let listaitem = "";
+            listaestoque.forEach(function(item) {
+                listaitem += item + "\n";
+            });
+            alert("Lista do estoque: " + "\n" + listaitem)
+            continue;
+        }
+        if(opcao === "4") {// sai do loop
+            break;
+        } else {
+            alert("Opção invalida. Tente novamente.");
+        }
+
+    }
+//index é uma variavel que armazena o indice(posição) do item que o usuario deseja remover do array
+//o indexOf() é utilizada para encotrar a posição do array
+//Se o elemento não estiver presente no meu array, a função indexOf() retorna -1. Por isso, a condição if(index != 1)
+//A função splice() recebe dois parametros: o primeiro é o indice do elemento (index) que deve ser removido e o segundo é a quantidade de elementos
+//O foreach percorre o array utilizando uma função que tem como objetivo mostrar os itens de uma maneira "formatada" 
+ 
+
+</script>
+</body>
+</html>

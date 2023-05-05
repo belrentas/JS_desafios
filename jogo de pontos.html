@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio2</title>
+</head>
+<body>
+    
+    <script>
+
+        let nv = prompt("Qual o nivel de dificuldade em que você esta? (fácil, médio ou difícil)");
+        let pontos = prompt("Quantos pontos você fez?")
+        let coeficiente
+        let pontf;
+
+
+        switch(nv){
+
+            case "fácil":
+                coeficiente = 1;
+                break;
+
+            case "médio":
+                coeficiente = 2;
+                break;
+
+            case "difícil":
+                coeficiente = 3;
+                break
+            
+            default:
+                alert("Nivel inválido");
+        }
+
+        pontf = pontos*coeficiente;
+        
+        alert("Você está em um nível " + nv + "." + "\n" + "Então sua pontução final é: " + pontf + " pontos.")
+       
+    </script>
+</body>
+</html>

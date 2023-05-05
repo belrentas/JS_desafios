@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>desafio jogo de advinhação</title>
+</head>
+<body>
+    
+    <script>
+
+        let numero = Math.floor( Math.random(0,1) * 100);
+        let nadv;
+        let tentativas = 0;
+
+
+        do{
+            tentativas++;
+
+            if(numero == nadv) {
+                alert("Parabéns o número é " + numero + "\n" + "O número de tentativas foi: " + tentativas)
+            }
+            nadv = prompt("Digite um número")
+
+            if(nadv > numero) {
+            alert("O numero é menor que " + nadv)
+
+            }
+            if(nadv < numero) {
+                alert("O número é maior que " + nadv)
+            }
+            
+        } while(numero !== nadv);
+
+        
+
+    
+    </script>
+</body>
+</html>

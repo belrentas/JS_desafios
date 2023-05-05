@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipo de cliente</title>
+</head>
+<body>
+    
+    <script>
+
+        let valor = prompt("Qual o valor da sua compra?")
+        let tpc = prompt("Que tipo de cliente você é? (VIP,Premium ou Padrão)")
+        let desconto;
+        let valorfinal;
+        
+        switch (tpc) {
+
+            case "VIP":
+                desconto = 30/100
+                break;
+            case "Premium":
+                desconto = 20/100
+                break;
+            case"Padrão":
+                desconto = 10/100
+                break;
+            default:
+                alert("Tipo de cliente inválido");
+        }
+
+        valorfinal = valor-(valor*desconto);
+
+
+        alert("O valor da sua compra é: " + valor + " R$" + "\n" + "O tipo de cliente é: " + tpc + "\n" +  "Então o valor total da sua compra ficou: " + valorfinal + " R$");
+        
+    
+    </script>
+</body>
+</html>
