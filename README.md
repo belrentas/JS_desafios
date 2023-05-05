@@ -1,2 +1,2 @@
 # JS_desafios
-Desafios javascript
+javascript mais avançado
